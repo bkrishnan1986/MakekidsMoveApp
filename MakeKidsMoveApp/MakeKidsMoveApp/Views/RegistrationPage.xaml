@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MakeKidsMoveApp.Views.RegistrationPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Sign Up" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" FontSize="Medium" FontAttributes="Bold"/>
+            <Entry Placeholder="Name"  x:Name="Name" Text="{Binding RegistrationModel.FirstName,  Mode=TwoWay}" Style="{StaticResource entryStyle}" />
+            <Entry Placeholder="User Name"  x:Name="UserName" Text="{Binding RegistrationModel.UserName,  Mode=TwoWay}" Style="{StaticResource entryStyle}" />
+            <Entry Placeholder="Password"   x:Name="Password" Text="{Binding RegistrationModel.Password,  Mode=TwoWay}" Style="{StaticResource entryStyle}" />
+            <Entry Placeholder="Confirm Password"  x:Name="FirstName" Text="{Binding RegistrationModel.ConfirmPassword,  Mode=TwoWay}" Style="{StaticResource entryStyle}" />
+            <Button Text="Register" Style="{StaticResource buttonStyle}"  Command="{Binding Register}" VerticalOptions="End"  x:Name="btnRegister" />
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Already have an account?"  TextColor="White" FontSize="Medium" FontAttributes="Bold"/>
+                <Label Text="Sign In" TextDecorations="Underline"  TextColor="White" FontSize="Medium" FontAttributes="Bold"/>
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
