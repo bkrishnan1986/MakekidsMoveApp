@@ -11,8 +11,12 @@ namespace MakeKidsMoveApp.Models
         public long Id { get; set; }
         [JsonProperty("FirstName")]
         public string FirstName { get; set; }
-        [JsonProperty("UserName")]
+        [JsonProperty("FirstName")]
+        public string NickName { get; set; }
+        [JsonProperty("NickName")]
         public string UserName { get; set; }
+        [JsonProperty("Age")]
+        public int Age { get; set; }
         [JsonProperty("Password")]
         public string Password { get; set; }
         public string ConfirmPassword { get; set; }

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MakeKidsMoveApp.Views.ChildPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Back to list" TextDecorations="Underline"  TextColor="Black" FontSize="Medium" FontAttributes="Bold"/>
+            </StackLayout>
+            <Label Text="Add Child" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" FontSize="Medium" FontAttributes="Bold"/>
+            <Entry Placeholder="Name"  x:Name="Name" Text="{Binding RegistrationModel.FirstName,  Mode=TwoWay}" Style="{StaticResource entryStyle}" />
+            <Entry Placeholder="Nick Name"  x:Name="NickName" Text="{Binding RegistrationModel.NickName,  Mode=TwoWay}" Style="{StaticResource entryStyle}" />
+            <Entry Placeholder="Age"  x:Name="Age" Text="{Binding RegistrationModel.Age,  Mode=TwoWay}" Style="{StaticResource entryStyle}" />
+            <Entry Placeholder="Email Address / User Name"  x:Name="UserName" Text="{Binding RegistrationModel.UserName,  Mode=TwoWay}" Style="{StaticResource entryStyle}" />
+            <Entry Placeholder="Password" IsPassword="True"  x:Name="Password" Text="{Binding RegistrationModel.Password,  Mode=TwoWay}" Style="{StaticResource entryStyle}" />
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Save" Style="{StaticResource buttonStyle}"  Command="{Binding Save}" VerticalOptions="End"  x:Name="btnSave" />
+                <Button Text="Clear" Style="{StaticResource buttonStyle}"  Command="{Binding Clear}" VerticalOptions="End"  x:Name="btnClear" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MakeKidsMoveApp.Views.LoginPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Login" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black" FontSize="Medium" FontAttributes="Bold"/>
+            <Entry Placeholder="User Name"  x:Name="UserName" Text="{Binding LoginModel.UserName,  Mode=TwoWay}" Style="{StaticResource entryStyle}" />
+            <Entry Placeholder="Password"   x:Name="Password" Text="{Binding LoginModel.Password,  Mode=TwoWay}" Style="{StaticResource entryStyle}" />
+            <Button Text="Login" Style="{StaticResource buttonStyle}"  Command="{Binding Login}" VerticalOptions="End"  x:Name="btnLogin" />
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Create a new account?"  TextColor="Black" FontSize="Medium" FontAttributes="Bold"/>
+                <Label Text="Sign Up" TextDecorations="Underline"  TextColor="White" FontSize="Medium" FontAttributes="Bold"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Home" TextDecorations="Underline" TextColor="Black" FontSize="Medium" FontAttributes="Bold"/>
+                <Label Text="|"  FontSize="Medium" FontAttributes="Bold"/>
+                <Label Text="Forgot Password?" TextDecorations="Underline"  TextColor="Black" FontSize="Medium" FontAttributes="Bold"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

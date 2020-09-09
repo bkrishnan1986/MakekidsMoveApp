@@ -70,7 +70,25 @@ namespace MakeKidsMoveApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to /profile?userType=parent&amp;parentId=0.
+        ///   Looks up a localized string similar to /login.
+        /// </summary>
+        internal static string Login {
+            get {
+                return ResourceManager.GetString("Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /profile?userType={0}&amp;parentId={1}.
+        /// </summary>
+        internal static string SaveChildDetails {
+            get {
+                return ResourceManager.GetString("SaveChildDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /profile?userType={0}&amp;parentId={1}.
         /// </summary>
         internal static string SaveParentRegistrationDetail {
             get {
