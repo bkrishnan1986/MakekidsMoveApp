@@ -25,7 +25,7 @@
                 <Setter Property="FontSize" Value="17" />
                 <Setter Property="PlaceholderColor" Value="DarkGray" />
                 <Setter Property="BackgroundColor" Value="Transparent" />
-                <Setter Property="TextColor" Value="White" />
+                <Setter Property="TextColor" Value="Black" />
             </Style>
         </ResourceDictionary>
     </Application.Resources>

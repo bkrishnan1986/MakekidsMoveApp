@@ -2,6 +2,7 @@
 using MakeKidsMoveApp.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ using Xamarin.Forms.Xaml;
 
 namespace MakeKidsMoveApp.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
+    [DesignTimeVisible(false)]
     public partial class RegistrationPage : ContentPage
     {
         RegistrationViewModel _viewModel;
@@ -19,13 +20,9 @@ namespace MakeKidsMoveApp.Views
         public RegistrationPage()
         {
             InitializeComponent();
-            Task.Run(() =>
-            {
-                _viewModel = new RegistrationViewModel(this.Navigation);
-                _viewModel.Navigation = Navigation;
 
-                BindingContext = _viewModel;
-            }).Wait();
+            BindingContext = _viewModel = new RegistrationViewModel();
+
         }
     }
 }

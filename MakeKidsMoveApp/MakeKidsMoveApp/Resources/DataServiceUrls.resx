@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="BaseUrl" xml:space="preserve">
-    <value>https://localhost:5001/api/</value>
+    <value>https://localhost:44326/api/</value>
   </data>
   <data name="SaveParentRegistrationDetail" xml:space="preserve">
     <value>/profile?userType=parent&amp;parentId=0</value>

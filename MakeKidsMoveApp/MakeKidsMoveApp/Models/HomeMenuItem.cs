@@ -7,7 +7,8 @@ namespace MakeKidsMoveApp.Models
     public enum MenuItemType
     {
         Browse,
-        About
+        About,
+        SignUp
     }
     public class HomeMenuItem
     {

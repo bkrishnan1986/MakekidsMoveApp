@@ -21,11 +21,11 @@ namespace MakeKidsMoveApp.ViewModels
 
         public IAsyncCommand Register { get; private set; }
         public Registration RegistrationModel { get; set; }
-        public RegistrationViewModel(INavigation navigation)
+        public RegistrationViewModel()
         {
             try
             {
-                this._navigation = navigation;
+                RegistrationModel = new Registration();
                 Register = new AsyncCommand(ExecuteSubmitAsync);
             }
             catch (Exception ex)
@@ -59,7 +59,7 @@ namespace MakeKidsMoveApp.ViewModels
                     await Application.Current.MainPage.DisplayAlert("Failed", "Password is required", "OK");
                     return;
                 }
-                if (!string.IsNullOrEmpty(RegistrationModel.ConfirmPassword))
+                if (string.IsNullOrEmpty(RegistrationModel.ConfirmPassword))
                 {
                     await Application.Current.MainPage.DisplayAlert("Failed", "Confirm Password is required", "OK");
                     return;
