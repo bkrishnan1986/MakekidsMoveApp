@@ -23,6 +23,10 @@ namespace MakeKidsMoveApp.ViewModels
         public IAsyncCommand Save { get; private set; }
         public IAsyncCommand Clear { get; private set; }
         public Registration RegistrationModel { get; set; }
+        public RegistrationViewModel(Registration reg=null)
+        {
+            RegistrationModel = reg;
+        }
         public RegistrationViewModel()
         {
             try
@@ -31,14 +35,31 @@ namespace MakeKidsMoveApp.ViewModels
                 Register = new AsyncCommand(ExecuteSubmitAsync);
                 Save = new AsyncCommand(ExecuteSaveAsync);
                 Clear = new AsyncCommand(ExecuteClearAsync);
-                
+                var parentId = Preferences.Get(PreferenceKeyName.Parent_Id, 0);
+                RegistrationModel = GetItem(parentId).GetAwaiter().GetResult();
             }
             catch (Exception ex)
             {
                 throw;
             }
         }
-
+        async Task<Registration> GetItem(Int32 id)
+        {
+            try
+            {
+                Preferences.Set("executeurl", String.Format(DataServiceUrls.GetParentDetails, id));
+                var result = await DataStore.GetItemAsync<Registration>();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
         private async Task ExecuteSubmitAsync()
         {
             try

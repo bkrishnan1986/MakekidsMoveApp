@@ -61,11 +61,20 @@ namespace MakeKidsMoveApp.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://localhost:44326/api/.
+        ///   Looks up a localized string similar to https://localhost:5001/api/.
         /// </summary>
         internal static string BaseUrl {
             get {
                 return ResourceManager.GetString("BaseUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to profile/GetProfileById?id={0}.
+        /// </summary>
+        internal static string GetParentDetails {
+            get {
+                return ResourceManager.GetString("GetParentDetails", resourceCulture);
             }
         }
         
